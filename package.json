@@ -1,6 +1,6 @@
 {
   "name": "color-scheme-fallback",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "color-scheme-change with legacy fallback way (using hash parameter)",
   "main": "dist/index.min.js",
   "main_cjs": "dist/index.cjs.js",
