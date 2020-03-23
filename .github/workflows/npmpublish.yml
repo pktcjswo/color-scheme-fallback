@@ -40,6 +40,10 @@ jobs:
       #   uses: actions/download-artifact@v1
       #   with:
       #     name: dist
+      - name: Set NPM Token Action
+        uses: filipstefansson/set-npm-token-action@v1
+        with:
+          token: ${{ secrets.npm_token }}
       - run: npm install
       - run: npm run build 
       - run: npm run publish
