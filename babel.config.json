@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "33",
+          "ie": "11"
+        },
+        "forceAllTransforms": true
+      }
+    ]
+  ],
+  "plugins": [
+  ]
+}

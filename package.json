@@ -1,0 +1,105 @@
+{
+  "name": "color-scheme-fallback",
+  "version": "0.8.1",
+  "description": "color-scheme-change with legacy fallback way (using hash parameter)",
+  "main": "dist/index.min.js",
+  "main_cjs": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rimraf dist node_modules coverage",
+    "test": "jest --coverage && eslint ./src && size-limit",
+    "pretest": "npm run build",
+    "publish": "clean-publish"
+  },
+  "size-limit": [
+    {
+      "limit": "3 KB",
+      "path": "dist/index.min.js"
+    }
+  ],
+  "jest": {
+    "moduleFileExtensions": ["js", "json", "jsx", "ts", "tsx", "json"],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1"
+    },
+    "transform": {
+      "^.+\\.(js|jsx)?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [ "<rootDir>/node_modules/" ],
+    "testEnvironment": "jsdom",
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "coverageThreshold": {
+      "global": {
+        "statements": 50
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "sideEffects": false,
+  "repository": {
+    "type": "pktcjswo/color-scheme-fallback"
+  },
+  "files": [
+    "dist",
+    "examples"
+  ],
+  "keywords": [
+    "dark mode",
+    "color scheme",
+    "prefers-color-scheme",
+    "light mode"
+  ],
+  "contributors": [
+    "KyongTae Park <pktcjswo@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pktcjswo/color-scheme-fallback/issues",
+    "email": "pktcjswo@gmail.com"
+  },
+  "homepage": "https://github.com/pktcjswo/color-scheme-fallback#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@size-limit/preset-small-lib": "^4.4.0",
+    "@types/jest": "^25.1.4",
+    "babel-jest": "^25.1.0",
+    "clean-publish": "^1.1.6",
+    "eslint": "^6.8.0",
+    "eslint-ci": "^1.0.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prefer-let": "^1.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.8",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.1.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "size-limit": "^4.4.0"
+  }
+}
